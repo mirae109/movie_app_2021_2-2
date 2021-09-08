@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# 김미래 202030404
+# Movie App 2021
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React JS Fundamentals Course 2021
+<br>
+<h2 id=index>Index</h2>
+<ul>
+	<li><a href="#1">9/1 리액트 기본 세팅</a></li>
+    <li><a href="#2">9/8 클론 코딩 시작하기</a></li>
+</ul>
 
-## Available Scripts
+<br>
 
-In the project directory, you can run:
+	<h4>⚙ 팁</h4> 
+<ul>
+	<li><a href="#set1">초코 설치하기</a></li>
+    <li><a href="#set2">푸쉬 메세지 쓸 때</a></li>
+</ul>
+<br>
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+</div>
+<div id="2">
+  <h2> 9/8 클론 코딩 시작하기 </h2>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+	
+</div>
+<div id="1">
+  <h2> 9/1 리액트 기본 세팅 </h2>
+	1. 리액트 시작 → <code> npm start</code>
+	2. 리액트 종료 → <code>컨트롤 C </code>
+	
+</div>
 
-### `yarn test`
+<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<div id="set2">
+    <h2>푸쉬 메세지 쓸 때</h2>
+    (예시)
+Edit package.json
 
-### `yarn build`
+script의 test, eject 삭제 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-> 동사원형으로 작업을 정의한다. 
+    한 줄로 짧게 적는다.  
+    그 밑은 스크립트로 들어가므로 길게 적어도 된다. 
+</div>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<div id="set1"> 
+	<h2>Chocolatey 설치법</h2>
 
-### `yarn eject`
+chocolatey란, 윈도우용 패키지 매니저임! 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. 아래 코드 복사하기 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+2. 윈도우 powerShell 관리자모드에 붙혀넣기 
+<img width="172" alt="파워셸" src="https://user-images.githubusercontent.com/70610515/131619409-15120ecf-fb54-4f41-b208-44403fa866c8.PNG">
+</div>
