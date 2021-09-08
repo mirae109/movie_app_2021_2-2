@@ -1,7 +1,7 @@
-# 김미래 202030404
-# Movie App 2021
+# 김미래 202030404 
+2학년 2학기의 웹콘텐츠 프로그래밍 수업때 제작한 
+Movie App 2021 앱입니다.  
 
-React JS Fundamentals Course 2021
 <br>
 <h2 id=index>Index</h2>
 <ul>
@@ -11,7 +11,7 @@ React JS Fundamentals Course 2021
 
 <br>
 
-	<h4>⚙ 팁</h4> 
+<h4> ⚙ 팁 ⚙</h4> 
 <ul>
 	<li><a href="#set1">초코 설치하기</a></li>
     <li><a href="#set2">푸쉬 메세지 쓸 때</a></li>
@@ -26,7 +26,7 @@ React JS Fundamentals Course 2021
 	
 </div>
 <div id="1">
-  <h2> 9/1 리액트 기본 세팅 </h2>
+  <h3> 9/1 리액트 기본 세팅 </h3>
 	1. 리액트 시작 → <code> npm start</code>
 	2. 리액트 종료 → <code>컨트롤 C </code>
 	
@@ -35,7 +35,7 @@ React JS Fundamentals Course 2021
 <br>
 
 <div id="set2">
-    <h2>푸쉬 메세지 쓸 때</h2>
+    <h3>푸쉬 메세지 쓸 때</h3>
     (예시)
 Edit package.json
 
