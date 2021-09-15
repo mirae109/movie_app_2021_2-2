@@ -24,7 +24,7 @@ Movie App 2021 앱입니다.
   <h2> 9/15 props </h2>
 
   <h3> 1. 딕셔너리 </h3>
-  딕셔너리는 아래와 같은 형식으로 작성해야 해요 
+  딕셔너리는 아래와 같은 형식으로 작성해야 해요 <br>
   <code>
   const foodLike = [
   {
@@ -32,17 +32,17 @@ Movie App 2021 앱입니다.
   name : '냉면',
   }
   </code>
-
+  <br>
   <h3> 2. Map 함수 </h3>
   map 함수를 이용하면 딕셔너리 안에서 정보를 찾을 수 있어요.
-  이때 dish의 이름으로 찾을 거에요 
+  이때 dish의 이름으로 찾을 거에요 <br>
   <code>
   foodLike.map (dish =>(
       <Food key={dish.id} name={dish.name} picture={dish.img} alt={dish.name}/>))
   </code>
-
+  <br>
   <h3> 3. 함수 인자에서 구조 분해 할당하기 (76p) </h3>
-  함수 인자에서 바로 구조 분해를 할당했어요
+  함수 인자에서 바로 구조 분해를 할당했어요<br>
   <code>
   function Food({name, picture}){
 
@@ -56,18 +56,20 @@ Movie App 2021 앱입니다.
     );
   }
   </code>
-
+  <br>
   <h3>4. 함수를 만들어서 App() 을 깨끗하게 만들고 싶다면?</h3>
+  <br>
   <code>
       foodLike.map (foodrender)
   </code>
   App에는 위와 같이 함수 이름만 써주고, 
-
+  <br>
   <code>
     function foodrender(dish){
       return <Food name={dish.name} picture={dish.img} alt={dish.name}/>;
     }
   </code>
+  <br>
   아래에는 foodrender 함수를 만들면 깨끗하게 정리할 수 있어
   
 
