@@ -8,6 +8,7 @@ Movie App 2021 앱입니다.
 	<li><a href="#1">9/1 리액트 기본 세팅</a></li>
   <li><a href="#2">9/8 클론 코딩 시작하기</a></li>
   <li><a href="#3">9/15 props</a></li>
+  <li><a href="#4">9/29 prop-types</a></li>
 </ul>
 
 <br>
@@ -18,6 +19,59 @@ Movie App 2021 앱입니다.
     <li><a href="#set2">푸쉬 메세지 쓸 때</a></li>
 </ul>
 <br>
+
+</div>
+<div id="4">
+  <h2>9/29 prop-types</h2>
+  1. 프로토타입을 설치합니다.<br>
+  <code>npm install prop-types</code>
+  <br>
+  설피 후 package.json에서 prop-types의 
+  키값이 추가된 것을 확인할 수 있어요
+
+  2. 프로토타입을 적습니다.<br>
+  <code> 
+  Food.prototype = {
+  name: PropTypes.string.isRequired,
+  picture: PropTypes.string.isRequired,
+  rating: PropTypes.number.isRequired
+};
+  </code>
+   <br>
+   딕셔너리에 넣어둔 평점 부분이 number타입으로 보여져요
+   ( PropTypes은 정적 데이터를 관리! 동적은 state로!)
+
+------------**지금까지 연습! 04-app으로 바꾸고 새파일로 씁니다**-----
+
+  1. 버튼을 이용해서 숫자 증감하기<br>
+  <code>
+  <button onClick={this.add}>add</button>
+  <button onClick={this.minus}>minus</button>
+  </code>
+  <br>
+  버튼을 만들어주고 onClik을 만들어요
+  <br>
+  <code>
+   add = () => {
+   this.setState({count : this.state.count +1});
+  }
+
+  minus = () => {
+    this.setState({count : this.state.count -1});
+  }
+  </code>
+  <br>
+
+  2. componentDidMount, componentDidUpdate<br>
+  <code>
+  componentDidMount(){
+    console.log('componentDidMount');
+  }
+  componentDidUpdate(){
+    console.log('componentDidUpdate');
+  }</code>
+  <br>
+  
 
 </div>
 <div id="3">
