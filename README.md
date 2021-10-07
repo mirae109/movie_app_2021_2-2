@@ -9,6 +9,7 @@ Movie App 2021 앱입니다.
   <li><a href="#2">9/8 클론 코딩 시작하기</a></li>
   <li><a href="#3">9/15 props</a></li>
   <li><a href="#4">9/29 prop-types</a></li>
+  <li><a href="#5">10/6 isLoading</a></li>
 </ul>
 
 <br>
@@ -19,6 +20,30 @@ Movie App 2021 앱입니다.
     <li><a href="#set2">푸쉬 메세지 쓸 때</a></li>
 </ul>
 <br>
+
+</div>
+<div id="5">
+<h2>10/6 isLoading</h2>
+로딩중을 알려주는 표시 
+<br>
+<code>
+render() {
+    const { isLoading } = this.state
+    return (
+      <div>
+        { isLoading ? 'Loading...' : '영화데이터출력'}
+      </div>
+      )
+    }
+</code>
+axios 설치하기 
+<br>
+<code>
+npm install axios
+</code>
+axios를 이용하여 api를 이용할 수 있다.
+
+
 
 </div>
 <div id="4">

@@ -1,41 +1,35 @@
-import {Component} from 'react';
+import React, {Component} from 'react';
+import axios from 'axios';
 
-class App extends Component {
 
-  constructor(props){
-    super(props)
-    console.log('constructor');
+class App extends React.Component {
+  state = {
+    isLoading: true,
+    movies: []
+  }
+
+  getMovies = async () => {
+    const {
+      data: {
+        data: {movies}
+      }
+    } = await axios.get('http://yts-proxy.now.sh/list_movies.json');
+    this.setState({ movies, isLoading: false });
   }
 
   componentDidMount(){
-    console.log('componentDidMount');
-  }
-  componentDidUpdate(){
-    console.log('componentDidUpdate');
+    this.getMovies
   }
 
-  state = {
-    count: 0
-  }
-
-  //버튼을 이용해 수 증감하기 
-  add = () => {
-   this.setState({count : this.state.count +1});
-  }
-
-  minus = () => {
-    this.setState({count : this.state.count -1});
-  }
-
-  render(){
+  render() {
+    const { isLoading } = this.state
     return (
       <div>
-      <h1>The number is: {this.state.count}</h1>
-      <button onClick={this.add}>add</button>
-      <button onClick={this.minus}>minus</button>
+        { isLoading ? 'Loading...' : '영화데이터출력'}
       </div>
-    )
+      )
+    }
   }
-}
+
 
 export default App;
