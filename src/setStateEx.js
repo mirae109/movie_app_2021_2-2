@@ -1,6 +1,6 @@
 import {Component} from 'react';
 
-class App extends Component {
+class Appset extends Component {
 
   constructor(props){
     super(props)

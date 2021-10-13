@@ -10,6 +10,7 @@ Movie App 2021 앱입니다.
   <li><a href="#3">9/15 props</a></li>
   <li><a href="#4">9/29 prop-types</a></li>
   <li><a href="#5">10/6 isLoading</a></li>
+  <li><a href="#6">10/13 Movie 컴포넌트</a></li>
 </ul>
 
 <br>
@@ -22,9 +23,41 @@ Movie App 2021 앱입니다.
 <br>
 
 </div>
+<div id="6">
+<h2>10/13 Movie 컴포넌트</h2><br>
+Movie.js에 적은 컴포넌트에 실질적인 값을 app.js에서 전달합니다.<br>
+<code>
+function Movie({id, title, year, summary, poster}){
+    return (
+        <div class="movie__data">
+            <h3 class="move__title">{title}</h3>
+            <h5 class="move__year">{year}</h5>
+            <p class="move__summary">{summary}</p>
+        </div>
+    )
+}
+</code><br>
+위와 같은 컴포넌트는 아래 컴포넌트의 값을 가져옵니다. 
+(movies.map은 영화api에서 필요한 키값을 가져옵니다.)
+<code>
+{ movies.map((movie) => { 
+  return (
+    <Movie
+      key={movie.id}
+      id={movie.id}
+      year={movie.year}
+      title={movie.title}
+      summary={movie.summary}
+      poster={movie.poster}
+      />
+    );
+})}
+</code><br>
+
+</div>
 <div id="5">
-<h2>10/6 isLoading</h2>
-로딩중을 알려주는 표시 
+<h2>10/6 isLoading</h2><br>
+<h3>로딩중을 알려주는 표시</h3>
 <br>
 <code>
 render() {
@@ -36,11 +69,13 @@ render() {
       )
     }
 </code>
+<br>
 axios 설치하기 
 <br>
 <code>
 npm install axios
 </code>
+<br>
 axios를 이용하여 api를 이용할 수 있다.
 
 
