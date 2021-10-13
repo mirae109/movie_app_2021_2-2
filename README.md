@@ -38,6 +38,8 @@ function Movie({id, title, year, summary, poster}){
     )
 }
 ```
+위와 같은 컴포넌트는 아래 컴포넌트의 값을 가져옵니다.
+(movies.map은 영화api에서 필요한 키값을 가져옵니다.)
 
 ```jsx
 { movies.map((movie) => {
@@ -53,10 +55,6 @@ return (
 		);
 })}
 ```
-
-위와 같은 컴포넌트는 아래 컴포넌트의 값을 가져옵니다.
-
-(movies.map은 영화api에서 필요한 키값을 가져옵니다.)
 
 </div>
 <div id="5">
