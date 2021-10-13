@@ -24,9 +24,10 @@ Movie App 2021 앱입니다.
 
 </div>
 <div id="6">
-<h2>10/13 Movie 컴포넌트</h2><br>
-Movie.js에 적은 컴포넌트에 실질적인 값을 app.js에서 전달합니다.<br>
-<code>
+<h2>10/13 Movie 컴포넌트</h2>
+Movie.js에 적은 컴포넌트에 실질적인 값을 app.js에서 전달합니다.
+
+```jsx
 function Movie({id, title, year, summary, poster}){
     return (
         <div class="movie__data">
@@ -36,23 +37,26 @@ function Movie({id, title, year, summary, poster}){
         </div>
     )
 }
-</code><br>
-위와 같은 컴포넌트는 아래 컴포넌트의 값을 가져옵니다. 
-(movies.map은 영화api에서 필요한 키값을 가져옵니다.)
-<code>
-{ movies.map((movie) => { 
-  return (
-    <Movie
-      key={movie.id}
-      id={movie.id}
-      year={movie.year}
-      title={movie.title}
-      summary={movie.summary}
-      poster={movie.poster}
-      />
-    );
+```
+
+```jsx
+{ movies.map((movie) => {
+return (
+<Movi
+			key={movie.id}
+			id={movie.id}
+			year={movie.year}
+			title={movie.title}
+			summary={movie.summary}
+			poster={movie.poster}
+			/>
+		);
 })}
-</code><br>
+```
+
+위와 같은 컴포넌트는 아래 컴포넌트의 값을 가져옵니다.
+
+(movies.map은 영화api에서 필요한 키값을 가져옵니다.)
 
 </div>
 <div id="5">
