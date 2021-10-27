@@ -11,6 +11,7 @@ Movie App 2021 앱입니다.
   <li><a href="#4">9/29 prop-types</a></li>
   <li><a href="#5">10/6 isLoading</a></li>
   <li><a href="#6">10/13 Movie 컴포넌트</a></li>
+  <li><a href="#7">10/27 영화앱 다듬기</a></li>
 </ul>
 
 <br>
@@ -21,6 +22,63 @@ Movie App 2021 앱입니다.
     <li><a href="#set2">푸쉬 메세지 쓸 때</a></li>
 </ul>
 <br>
+
+<div id="7">
+<h2>10/27 영화앱 다듬기</h2>
+- css 수정하기 → App.css랑 Movie.css
+
+```jsx
+box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3),
+0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+```
+
+박스 그림자 효과 css 코드!
+
+- 말 줄임 효과
+
+```jsx
+<p class="move__summary">{summary.slice(0,180)}...</p>
+```
+
+0부터 시작해서 180자 전까지만 보여진다.
+
+- 타이틀 변경하기
+
+```html
+<title>Movie App</title>
+```
+
+- 라우터 설치하기
+
+```html
+npm install react-router-d install react-router-dom
+```
+
+- Route는 2가지 props 전달
+    1. url을 위한 path props
+    2. url 에 맞는 컴포넌트를 불러 주기 위한 component props
+    
+- 문제점: 경로안에 있는 내용이 화면에 모두 보여짐
+    
+    해결 방법: exact props 추가하기
+    
+    ```html
+    exact={true}
+    ```
+    
+
+- npm install re install react-router-dom 시 오류 발생
+
+```jsx
+npm WARN read-shrinkwrap This version of npm is compatible with lockfileVersion@1, but package-lock.json was generated for lockfileVersion@2. I'll try to do my best with it!
+npm ERR! Maximum call stack size exceeded
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\82102\AppData\Roaming\npm-cache\_logs\2021-10-27T07_07_17_243Z-debug.log
+```
+
+
+
 
 </div>
 <div id="6">
@@ -58,7 +116,7 @@ return (
 
 </div>
 <div id="5">
-<h2>10/6 isLoading</h2><br>
+<h2>10/6 isLoading</h2>
 <h3>로딩중을 알려주는 표시</h3>
 <br>
 <code>
