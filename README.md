@@ -12,6 +12,7 @@ Movie App 2021 앱입니다.
   <li><a href="#5">10/6 isLoading</a></li>
   <li><a href="#6">10/13 Movie 컴포넌트</a></li>
   <li><a href="#7">10/27 영화앱 다듬기</a></li>
+  <li><a href="#8">11/3 영화앱 완성하기 </a></li>
 </ul>
 
 <br>
@@ -23,6 +24,58 @@ Movie App 2021 앱입니다.
 </ul>
 <br>
 
+<div id="8">
+<h2>11/3 영화앱 완성하기</h2>
+- 네비게이션 컴포넌트 만들기
+
+```jsx
+function Navigation() {
+    return(
+        <div className="nav">
+            <Link to="/"> HOME </Link>
+            <Link to="/about"> About </Link>
+        </div>
+    );
+}
+```
+
+- 디테일 컴포넌트 만들기
+
+```jsx
+import React from "react";
+
+function Detail(props) {
+    console.log(props);
+    return <span>hello</span>
+}
+
+export default Detail;
+```
+
+- 리다이렉트 기능 만들기
+
+```jsx
+class Detail extends React.Component{
+    componentDidMount(){
+        const {location, history} = this.props;
+
+        if(location.state === undefined){
+            history.push('/');
+        }
+    }
+
+    render(){
+        const {location}= this.props;
+        if(location.state){
+            return <span> {location.state.title} </span>
+        } else {
+            return null;
+        }
+    }
+}
+```
+
+</div>
 <div id="7">
 <h2>10/27 영화앱 다듬기</h2>
 - css 수정하기 → App.css랑 Movie.css

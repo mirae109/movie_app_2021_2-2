@@ -1,11 +1,12 @@
 import React from 'react';
 import './About.css';
 
-function About() {
+function About(prop) {
+  console.log(props);
   return (
     <div className="about__container">
       <span>
-        “Freedom!!”
+        “hello"
       </span>
       <span>- Kim mirae, 2021</span>
     </div>

@@ -1,10 +1,12 @@
 import React from "react";
+import Navigation from "./Navigation.css";
 
 function Navigation() {
     return(
-        <div>
-            <a href="/">Home</a>
-            <a href="/about">About</a> 
+        <div className="nav">
+            <Link to="/"> HOME </Link>
+            {/* <Link to="/about"> About </Link> */}
+            <Link to={{pathname: '/about', state:{ fromNavigation: true}}}> About </Link>
         </div>
     );
 }
