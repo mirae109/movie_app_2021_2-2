@@ -13,6 +13,7 @@ Movie App 2021 앱입니다.
   <li><a href="#6">10/13 Movie 컴포넌트</a></li>
   <li><a href="#7">10/27 영화앱 다듬기</a></li>
   <li><a href="#8">11/3 영화앱 완성하기 </a></li>
+  <li><a href="#9">11/10 배포 </a></li>
 </ul>
 
 <br>
@@ -24,6 +25,50 @@ Movie App 2021 앱입니다.
 </ul>
 <br>
 
+<div id="9">
+**리액트 특징**
+
+- UI개발 적합
+- 컴포넌트 로직은 js로 작성
+- 캡슐화된 컴포넌트 → 재사용 좋음
+- dom과 별개 상태 관리 가능
+- 기술 스택의 나머지 부분엔 관여X
+- 기존 코드와 별개로 개발 가능
+- 리엑트 네이티브 이용 시 모바일 앱 개발 가능
+
+**리액트 CDN으로 사용하기**
+
+- CDN: Content Delivery NetWork
+- CORS: 링크만 html에 갖다놓으면 쓸 수 있게 하는 메커니즘임.
+- Babel: 이전 버전 코드 호환 컴파일러
+
+cdn으로 할 때 
+
+- 리액트 넣고
+- cdn 링크넣고
+- 바벨 넣고
+- <script type="text/babel"> 적어야함
+
+```html
+<body>
+    <script type="text/babel">
+        class HelloMessage extends React.Component{
+            render(){
+                return(
+                    <div>
+                        hello {this.props.name}
+                    </div>
+                )
+            }
+        } 
+        ReactDOM.render(
+            <HelloMessage name="Taylor" />,
+            document.getElementById('hello-example')
+        )
+    </script>
+</body>
+```
+</div>
 <div id="8">
 <h2>11/3 영화앱 완성하기</h2>
 - 네비게이션 컴포넌트 만들기
