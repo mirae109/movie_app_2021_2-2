@@ -1,19 +1,45 @@
 import React from 'react';
-import './App.css';
-import About from './routes/About';
-import Home from './routes/Home';
-import Navigation from '../components/Navigation.js';
-import Detail from './routes/Detail.js';
-import {HashRouter, Route} from 'react-router-dom';
+import { Remarkable } from 'remarkable';
 
-function App() {
-  return(
-  <HashRouter>
-    <Navigation />
-     <Route path="/" exact={true} component={Home}/>
-     <Route path="/about" component={About}/>
-     <Route path="/movie-detail" component={Detail} />
-  </HashRouter>);
+import ReactDOM from 'react-dom';
+
+class MarkdownEditor extends React.Component {
+  constructor(props) {
+    super(props);
+    this.md = new Remarkable();
+    this.handleChange = this.handleChange.bind(this);
+    this.state = { value: 'Hello, **world**!' };
+  }
+
+  handleChange(e) {
+    this.setState({ value: e.target.value });
+  }
+
+  getRawMarkup() {
+    return { __html: this.md.render(this.state.value) };
+  }
+
+  render() {
+    return (
+      <div className="MarkdownEditor">
+        <h3>Input</h3>
+        <label htmlFor="markdown-content">
+          Enter some markdown
+        </label>
+        <textarea
+          id="markdown-content"
+          onChange={this.handleChange}
+          defaultValue={this.state.value}
+        />
+        <h3>Output</h3>
+        <div
+          className="content"
+          dangerouslySetInnerHTML={this.getRawMarkup()}
+        />
+      </div>
+    );
+  }
 }
 
-export default App;
+
+export default MarkdownEditor;

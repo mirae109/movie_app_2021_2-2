@@ -14,6 +14,7 @@ Movie App 2021 앱입니다.
   <li><a href="#7">10/27 영화앱 다듬기</a></li>
   <li><a href="#8">11/3 영화앱 완성하기 </a></li>
   <li><a href="#9">11/10 배포 </a></li>
+  <li><a href="#10">11/17 공식 문서 공부하기1 </a></li>
 </ul>
 
 <br>
@@ -24,6 +25,138 @@ Movie App 2021 앱입니다.
     <li><a href="#set2">푸쉬 메세지 쓸 때</a></li>
 </ul>
 <br>
+
+<div id="10">
+**11/17 공식 문서 공부하기1**
+
+<img width="559" alt="111" src="[https://user-images.githubusercontent.com/70610515/142155516-80f69187-25f2-4216-8404-c6c78c1197e7.PNG](https://user-images.githubusercontent.com/70610515/142155516-80f69187-25f2-4216-8404-c6c78c1197e7.PNG)">
+
+- 외부 플러그인 사용하기 (remarable : 마크다운 변환기)
+
+<aside>
+👉 npm install remarkable
+
+</aside>
+
+```jsx
+import React from 'react';
+import { Remarkable } from 'remarkable';
+
+import ReactDOM from 'react-dom';
+
+class MarkdownEditor extends React.Component {
+  constructor(props) {
+    super(props);
+    this.md = new Remarkable();
+    this.handleChange = this.handleChange.bind(this);
+    this.state = { value: 'Hello, **world**!' };
+  }
+
+  handleChange(e) {
+    this.setState({ value: e.target.value });
+  }
+
+  getRawMarkup() {
+    return { __html: this.md.render(this.state.value) };
+  }
+
+  render() {
+    return (
+      <div className="MarkdownEditor">
+        <h3>Input</h3>
+        <label htmlFor="markdown-content">
+          Enter some markdown
+        </label>
+        <textarea
+          id="markdown-content"
+          onChange={this.handleChange}
+          defaultValue={this.state.value}
+        />
+        <h3>Output</h3>
+        <div
+          className="content"
+          dangerouslySetInnerHTML={this.getRawMarkup()}
+        />
+      </div>
+    );
+  }
+}
+
+export default MarkdownEditor;
+```
+
+- To-Do 리스트 만들기
+
+```html
+class TodoApp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { items: [], text: '' };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  render() {
+    return (
+      <div>
+        <h3>TODO</h3>
+        <TodoList items={this.state.items} />
+        <form onSubmit={this.handleSubmit}>
+          <label htmlFor="new-todo">
+            What needs to be done?
+          </label>
+          <input
+            id="new-todo"
+            onChange={this.handleChange}
+            value={this.state.text}
+          />
+          <button>
+            Add #{this.state.items.length + 1}
+          </button>
+        </form>
+      </div>
+    );
+  }
+
+  handleChange(e) {
+    this.setState({ text: e.target.value });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    if (this.state.text.length === 0) {
+      return;
+    }
+    const newItem = {
+      text: this.state.text,
+      id: Date.now()
+    };
+    this.setState(state => ({
+      items: state.items.concat(newItem),
+      text: ''
+    }));
+  }
+}
+
+class TodoList extends React.Component {
+  render() {
+    return (
+      <ul>
+        {this.props.items.map(item => (
+          <li key={item.id}>{item.text}</li>
+        ))}
+      </ul>
+    );
+  }
+}
+
+ReactDOM.render(
+  <TodoApp />,
+  document.getElementById('todos-example')
+);
+```
+
+</div>
 
 <div id="9">
 **리액트 특징**
