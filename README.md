@@ -27,7 +27,7 @@ Movie App 2021 앱입니다.
 <br>
 
 <div id="10">
-**11/17 공식 문서 공부하기1**
+<h2>11/17 공식 문서 공부하기1</h2>
 
 <img width="559" alt="111" src="[https://user-images.githubusercontent.com/70610515/142155516-80f69187-25f2-4216-8404-c6c78c1197e7.PNG](https://user-images.githubusercontent.com/70610515/142155516-80f69187-25f2-4216-8404-c6c78c1197e7.PNG)">
 
@@ -159,7 +159,7 @@ ReactDOM.render(
 </div>
 
 <div id="9">
-**리액트 특징**
+<h2>리액트 특징</h2>
 
 - UI개발 적합
 - 컴포넌트 로직은 js로 작성
