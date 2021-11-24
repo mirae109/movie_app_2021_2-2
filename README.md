@@ -15,6 +15,7 @@ Movie App 2021 앱입니다.
   <li><a href="#8">11/3 영화앱 완성하기 </a></li>
   <li><a href="#9">11/10 배포 </a></li>
   <li><a href="#10">11/17 공식 문서 공부하기1 </a></li>
+  <li><a href="#11">11/24 공식 문서 공부하기2 </a></li>
 </ul>
 
 <br>
@@ -25,6 +26,101 @@ Movie App 2021 앱입니다.
     <li><a href="#set2">푸쉬 메세지 쓸 때</a></li>
 </ul>
 <br>
+
+<div id="10">
+<h2>11/24 공식 문서 공부하기2</h2>
+
+## 함수 컴포넌트와 클래스 컴포넌트
+
+- 컴포넌트 정의하기
+
+```jsx
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+```
+
+## 컴포넌트 합성
+
+```jsx
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+function App() {
+  return (
+    <div>
+      <Welcome name="Sara" />
+      <Welcome name="Cahal" />
+      <Welcome name="Edite" />
+    </div>
+  );
+}
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);
+```
+
+## props
+
+- 순수 함수:
+    
+    입력값을 바꾸려 하지 않고 항상 동일한 입력값에 대해 동일한 결과를 반환하기 때문
+    
+
+```jsx
+function sum(a, b) {
+  return a + b;
+}
+```
+
+## **State and Lifecycle**
+
+- 시계 예제
+
+```jsx
+class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {date: new Date()};
+  }
+
+  componentDidMount() {
+    this.timerID = setInterval(
+      () => this.tick(),
+      1000
+    );
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+
+  tick() {
+    this.setState({
+      date: new Date()
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Hello, world!</h1>
+        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <Clock />,
+  document.getElementById('root')
+);
+```
+
+</div>
 
 <div id="10">
 <h2>11/17 공식 문서 공부하기1</h2>
