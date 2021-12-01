@@ -16,6 +16,7 @@ Movie App 2021 앱입니다.
   <li><a href="#9">11/10 배포 </a></li>
   <li><a href="#10">11/17 공식 문서 공부하기1 </a></li>
   <li><a href="#11">11/24 공식 문서 공부하기2 </a></li>
+  <li><a href="#12">12/01 공식 문서 공부하기3 </a></li>
 </ul>
 
 <br>
@@ -26,6 +27,207 @@ Movie App 2021 앱입니다.
     <li><a href="#set2">푸쉬 메세지 쓸 때</a></li>
 </ul>
 <br>
+
+<div id="12">
+<h2>12/01 공식 문서 공부하기3 </h2>
+## **State and Lifecycle**
+
+캡슐화 : 사용방법 말고 사용만 가능하게 함. 
+
+컴포넌트만 호출해도 기능 사용이 가능함.
+
+```jsx
+function tick() {
+  const element = (
+    <div>
+      <h1>Hello, world!</h1>
+      <h2>It is {new Date().toLocaleTimeString()}.</h2>
+    </div>
+  );
+  ReactDOM.render(
+    element,
+    document.getElementById('root')
+  );
+}
+
+setInterval(tick, 1000);
+```
+
+그래서 분리화함. (아래)
+
+```jsx
+function Clock(props) {
+  return (
+    <div>
+      <h1>Hello, world!</h1>
+      <h2>It is {props.date.toLocaleTimeString()}.</h2>
+    </div>
+  );
+}
+
+function tick() {
+  ReactDOM.render(
+    <Clock date={new Date()} />,
+    document.getElementById('root')
+  );
+}
+
+setInterval(tick, 1000);
+```
+
+하지만 1초에 한 번씩 불러줘야 하는 것은 변함없음.
+
+props는 고치면 안돼. stete로 고쳐야지. 
+
+함수형을 클래스형으로 바꿔야지.
+
+리액트에 있는 컴포넌트를 상속받아서 클래스를 선언할 수 있다. 
+
+```jsx
+class Clock extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Hello, world!</h1>
+        <h2>It is {**this.props.date**.toLocaleTimeString()}.</h2>
+      </div>
+    );
+  }
+}
+```
+
+클래스형은 funtion 필요없어~ 지워버려 
+
+(*this는 슈퍼 props와 구분하기 위해서 쓴다. 
+
+자식 props의 생성자에 this를 붙힌다. )
+
+### 클래스에 로컬 State 추가하기
+
+```jsx
+class Clock extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Hello, world!</h1>
+        <h2>It is {**this.state.date**.toLocaleTimeString()}.</h2>
+      </div>
+    );
+  }
+}
+```
+
+<aside>
+⚠️ **this.props.date → this.state.date**
+
+</aside>
+
+```jsx
+class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {date: new Date()};
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Hello, world!</h1>
+        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+      </div>
+    );
+  }
+}
+```
+
+<aside>
+⚠️ 초기 `this.state`를 지정하는 [class constructor] 를 추가
+
+</aside>
+
+완성본
+
+```jsx
+class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {date: new Date()};
+  }
+
+  componentDidMount() {
+    this.timerID = setInterval(
+      () => this.tick(),
+      1000
+    );
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+
+  tick() {
+    this.setState({
+      date: new Date()
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Hello, world!</h1>
+        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <Clock />,
+  document.getElementById('root')
+);
+```
+
+## **이벤트 처리하기**
+
+React = 캐멀 케이스  VS  Jsx =이벤트 핸들러
+
+- html  : onclick="activateLasers"
+- React  : onClick={activateLasers}
+
+토글 예제
+
+```jsx
+class Toggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {isToggleOn: true};
+
+    // 콜백에서 `this`가 작동하려면 아래와 같이 바인딩 해주어야 합니다.
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
+    }));
+  }
+
+  render() {
+    return (
+      <button onClick={this.handleClick}>
+        {this.state.isToggleOn ? 'ON' : 'OFF'}
+      </button>
+    );
+  }
+}
+
+ReactDOM.render(
+  <Toggle />,
+  document.getElementById('root')
+);
+```
+
+</div>
 
 <div id="11">
 <h2>11/24 공식 문서 공부하기2</h2>
